@@ -36,6 +36,18 @@
     .quick-link:nth-of-type(3) { top: 16%; z-index: 997; }  /* Source Code */
     .quick-link:nth-of-type(4) { top: 22%; z-index: 996; }  /* Gift */
 
+    /* --- Footer message --- */
+    #footer-message {
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 1rem;
+      text-align: center;
+      z-index: 1000;
+    }
+
     /* --- Love words --- */
     #ui .love {
       position: absolute;
@@ -102,6 +114,53 @@
       79%  { transform: translateY(428.57143px); }
       100% { transform: translateY(180px); }
     }
+
+    /* --- Mobile optimizations --- */
+    @media (max-width: 768px) {
+      .quick-link {
+        display: none;
+      }
+      #ui .love {
+        margin: -100px 0 0 -100px;
+      }
+      #ui .love_word {
+        font-size: 1rem;
+      }
+      #ui .love:last-child .love_word {
+        font-size: 1.5rem;
+      }
+      @keyframes horizontal {
+        from { transform: translateX(0px); }
+        to   { transform: translateX(200px); }
+      }
+      @keyframes vertical {
+        0%   { transform: translateY(80px); }
+        10%  { transform: translateY(20px); }
+        15%  { transform: translateY(2px); }
+        18%  { transform: translateY(0px); }
+        20%  { transform: translateY(2px); }
+        22%  { transform: translateY(15px); }
+        24%  { transform: translateY(28px); }
+        25%  { transform: translateY(50px); }
+        26%  { transform: translateY(28px); }
+        28%  { transform: translateY(15px); }
+        30%  { transform: translateY(2px); }
+        32%  { transform: translateY(0px); }
+        35%  { transform: translateY(2px); }
+        40%  { transform: translateY(20px); }
+        50%  { transform: translateY(80px); }
+        71%  { transform: translateY(190px); }
+        72.5%{ transform: translateY(196px); }
+        75%  { transform: translateY(200px); }
+        77.5%{ transform: translateY(196px); }
+        79%  { transform: translateY(190px); }
+        100% { transform: translateY(80px); }
+      }
+      #footer-message {
+        font-size: 0.8rem;
+        bottom: 5px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -112,6 +171,10 @@
   <a href="https://shop1619956412.v.weidian.com/?userid=1619956412&spider_token=2720" class="quick-link" title="Gift">Gift</a>-->
 
   <div id="ui"></div>
+
+    <div id="footer-message">
+      <p class="footer-text">made with love by jass</p>
+    </div>
 
   <script>
     // Create N floating “I love you” items (was multilingual; now all English)
